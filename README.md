@@ -1,6 +1,8 @@
 # ESMET IoT
 
-**ESMET IoT** es un proyecto que intentaba iniciar el proceso de automatización del [invernadero hidropónico](http://regionatlantica.com/esmet-no-1-formacion-tecnica-de-excelencia-en-mar-del-plata-que-busca-asesora-a-productores-en-hidroponia/) de la Escuela Secundaria Municipal de Educación Técnica N°1 de la ciudad de Mar del Plata, mediante el desarrollo y construcción de un dispositivo IoT experimental de bajo costo para monitoreo de la temperatura ambiente.
+ESMET IoT es un proyecto que intentaba iniciar el proceso de automatización del [invernadero hidropónico](http://regionatlantica.com/esmet-no-1-formacion-tecnica-de-excelencia-en-mar-del-plata-que-busca-asesora-a-productores-en-hidroponia/) de la Escuela Secundaria Municipal de Educación Técnica N°1 de la ciudad de Mar del Plata, mediante el desarrollo y construcción de un dispositivo IoT experimental de bajo costo para monitoreo de la temperatura ambiente.
+
+![](./docs/fotos/invernadero_01.jpg)
 
 El proyecto consiste en una interfaz IoT conformada por hardware y software. El hardware esta basado en una placa NodeMCU, o similar basada en el SoC ESP8266, junto a un par de sensores de temperatura y, de manera opcional, humedad ambiente. Este bloque es el encargado de recoger los datos, procesarlos y enviarlos a un broker MQTT alojado en Internet. 
 
@@ -23,9 +25,21 @@ El sistema es escalable, es decir, que en una etapa futura será posible añadir
 
 ## Hardware
 
-El sensor....
+El dispositivo está basado en el SoC ESP8266 junto a un par de sensores [DS18B20](./docs/DS18B20.pdf) que serán los encargados de registrar le temperatura ambiente del recinto. Posee un switch interno para reiniciar la configuración WiFi y un sensor tamper para evitar que se manipule el gabinete sin autorización. Además posee tres LEDs indicadores: energía (*POWER*), estado de la conexión WiFi (*ONLINE*) y estado del tamper del gabinete (*ALARMA*) 
+
+![](./hardware/NodeIOT%20v1.png)
+*Diagrama esquemático.*
+
+Respecto a los sensores DS18B20, hay que tener en cuenta el valor de la resistencia pull-up que está conectada en el bus de datos (*pin DQ*). La siguiente tabla brinda una estimación del valor de acuerdo a la longitud del cable del bus. 
 
 ![](./docs/resistencia%20pull-up.png)
+
+Al iniciar el sistema se genera una red WiFi interna que permite ingresar las credenciales necesarias para poder conectarse a Internet, esto se logra gracias a la biblioteca *WiFiManager*. Una vez realizada la conexión a la red WiFi, se inicia el proceso para conectarse al broker MQTT, en este caso se utiliza un servidor público. 
+
+![](./docs/Screenshot_20210203.png)
+*Conectandóse a la red WiFi.*
+
+Una vez iniciado, el sistema registra el estado del sensor tamper y de ambos sensores cada cierto período de tiempo y realiza la publicación en un *topic* especifico del broker mqtt.
 
 ## Firmware
 
