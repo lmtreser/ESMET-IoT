@@ -1,25 +1,47 @@
 # ESMET IoT
 
-REPOSITORIO EN DESARROLLO...
+**ESMET IoT** es un proyecto que intentaba iniciar el proceso de automatización del [invernadero hidropónico](http://regionatlantica.com/esmet-no-1-formacion-tecnica-de-excelencia-en-mar-del-plata-que-busca-asesora-a-productores-en-hidroponia/) de la Escuela Secundaria Municipal de Educación Técnica N°1 de la ciudad de Mar del Plata, mediante el desarrollo y construcción de un dispositivo IoT experimental de bajo costo para monitoreo de la temperatura ambiente.
 
-Dispositivo IoT experimental y de bajo costo para monitoreo de temperatura ambiente en el vivero hidropónico de la Escuela Secundaria Municipal de Educación Técnica N°1.
+El proyecto consiste en una interfaz IoT conformada por hardware y software. El hardware esta basado en una placa NodeMCU, o similar basada en el SoC ESP8266, junto a un par de sensores de temperatura y, de manera opcional, humedad ambiente. Este bloque es el encargado de recoger los datos, procesarlos y enviarlos a un broker MQTT alojado en Internet. 
 
-https://programarfacil.com/blog/arduino-blog/ds18b20-sensor-temperatura-arduino/
+Por su parte el software que conformará el panel de control se desarrollará en Python + Django + JavaScript y en una primera instancia contará con una interfaz de usuario web donde se visualizará:
 
-https://maqiatto.com/
+- Gráfica tiempo / temperatura
+- Historial de registros
+- Lecturas de valor en tiempo real
+
+El sistema es escalable, es decir, que en una etapa futura será posible añadir características. Por ejemplo: 
+
+- Etapas de control de potencia
+- Sistema de alarma
+- Recepción de comandos 
+
+## Arquitectura del sistema
+
+![](./docs/arquitectura.png)
+*Arquitectura de un sistema basado en MQTT. Imagen [MQTT.org](https://mqtt.org/).*
 
 ## Hardware
 
-...
+El sensor....
+
+![](./docs/resistencia%20pull-up.png)
 
 ## Firmware
 
-Dependencias:
+El firmware está escrito utilizando la API de Arduino, y para compilar necesita las siguientes dependencias:
 
 - [Arduino Library for Maxim Temperature Integrated Circuits](https://github.com/milesburton/Arduino-Temperature-Control-Library)
 - [OneWire](https://www.pjrc.com/teensy/td_libs_OneWire.html)
 - [PubSubClient](https://pubsubclient.knolleary.net/)
 - [WiFiManager](https://github.com/tzapu/WiFiManager/)
+
+## Recursos
+
+- [Alumnos de la Esmet desarrollan una novedosa técnica de cultivo sin suelo](https://www.0223.com.ar/nota/2022-9-7-9-42-0-alumnos-de-la-esmet-desarrollan-una-novedosa-tecnica-de-cultivo-sin-suelo)
+- [Alumnos de la ESMET continúan con el desarrollo de proyectos productivos](https://www.mardelplata.gob.ar/Noticias/alumnos-de-la-esmet-continuan-con-el-desarrollo-de-proyectos-productivos)
+- [DS18B20 sensor de temperatura para líquidos con Arduino](https://programarfacil.com/blog/arduino-blog/ds18b20-sensor-temperatura-arduino/)
+- [MaQiaTTo MQTT Broker](https://maqiatto.com/)
 
 ## Licencia
 
