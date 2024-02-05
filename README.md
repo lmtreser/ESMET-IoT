@@ -2,6 +2,11 @@
 
 Dispositivo IoT experimental y de bajo costo para monitoreo de temperatura ambiente en el vivero hidropónico de la Escuela Secundaria Municipal de Educación Técnica N°1.
 
+https://programarfacil.com/blog/arduino-blog/ds18b20-sensor-temperatura-arduino/
+
+https://maqiatto.com/
+
+
 ## Firmware
 
 Dependencias:
