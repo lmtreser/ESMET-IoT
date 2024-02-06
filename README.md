@@ -3,6 +3,7 @@
 ESMET IoT es un proyecto que intentaba iniciar el proceso de automatización del [invernadero hidropónico](http://regionatlantica.com/esmet-no-1-formacion-tecnica-de-excelencia-en-mar-del-plata-que-busca-asesora-a-productores-en-hidroponia/) de la Escuela Secundaria Municipal de Educación Técnica N°1 de la ciudad de Mar del Plata, mediante el desarrollo y construcción de un dispositivo IoT experimental de bajo costo para monitoreo de la temperatura ambiente.
 
 ![](./docs/fotos/invernadero_01.jpg)
+*Invernadero ESMET N°1, diciembre de 2020*.
 
 El proyecto consiste en una interfaz IoT conformada por hardware y software. El hardware esta basado en una placa NodeMCU (SoC ESP8266), junto a un par de sensores de temperatura y, de manera opcional, humedad ambiente. Este bloque es el encargado de recoger los datos, procesarlos y enviarlos a un broker MQTT alojado en Internet. 
 
