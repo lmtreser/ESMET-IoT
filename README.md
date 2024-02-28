@@ -26,7 +26,7 @@ El sistema es escalable, es decir, que en una etapa futura será posible añadir
 
 ## Hardware
 
-El dispositivo está basado en el SoC ESP8266 junto a un par de sensores [DS18B20](./docs/DS18B20.pdf) que serán los encargados de registrar le temperatura ambiente del recinto. Posee un switch interno para reiniciar la configuración WiFi y un [sensor tamper](https://www.tecnoseguro.com/faqs/alarma/que-es-el-tamper-en-un-sistema-de-alarma) para evitar que se manipule el gabinete sin autorización. Además posee tres LEDs indicadores: energía (*POWER*), estado de la conexión WiFi (*ONLINE*) y estado del tamper del gabinete (*ALARMA*) 
+El dispositivo está basado en el SoC ESP8266 junto a un par de sensores [DS18B20](./docs/DS18B20.pdf) que serán los encargados de registrar le temperatura ambiente del recinto. Posee un switch interno para reiniciar la configuración WiFi y un [sensor tamper](https://www.tecnoseguro.com/faqs/alarma/que-es-el-tamper-en-un-sistema-de-alarma) para evitar que se manipule el gabinete sin autorización. Además posee tres LEDs indicadores: energía (*POWER*), estado de la conexión WiFi (*ONLINE*) y estado del tamper del gabinete (*ALARMA*).
 
 ![](./hardware/NodeIOT%20v1.png)
 *Diagrama esquemático.*
